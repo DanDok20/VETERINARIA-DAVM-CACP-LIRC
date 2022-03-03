@@ -24,6 +24,6 @@ class Mascota{
         void cambiarEstadoDefunsion();
         void setEstadoDefuncion(string fechaDefuncion);
         double getMascotaID();
-        
+        void mostrarDatosMascota();
 };
 #endif

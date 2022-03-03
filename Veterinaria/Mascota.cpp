@@ -32,6 +32,8 @@ Mascota::Mascota(string raza, string tipo, int edad, int peso, string tipoSangre
     }
 }
 
+
+
 void Mascota::setEstadoDefuncion( string fechaDefuncion){
     this->fechaDefuncion = fechaDefuncion;
 }

@@ -5,6 +5,8 @@ PropietariosXMascotas::PropietariosXMascotas(Propietario propietario, Mascota ma
     this->mascota = mascota;
 }
 
+
+
 Propietario PropietariosXMascotas::getPropietario(){
     return this->propietario;
 }

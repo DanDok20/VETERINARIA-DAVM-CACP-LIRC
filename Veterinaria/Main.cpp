@@ -39,6 +39,7 @@ void menu(Directorio directorio)
             ;
             break;
         case 4:
+            directorio.informacionPropietarios();
             ;
             break;
         case 5:
@@ -77,6 +78,7 @@ void menu(Directorio directorio)
 int main()
 {
     Directorio directorio;
+    directorio.inicializarDatos();
     menu(directorio);
     return 0;
 }
