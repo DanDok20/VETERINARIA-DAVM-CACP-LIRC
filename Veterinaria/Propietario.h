@@ -12,7 +12,8 @@ class Propietario{
         double propietarioID;
         double telefono;
     public:
+        Propietario();
         Propietario(string nombrePropietario, string email, double propietarioID, double telefono);
-        
+        double getPropietarioID();
 };
 #endif

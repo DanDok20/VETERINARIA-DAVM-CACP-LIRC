@@ -12,5 +12,5 @@ class PropietariosXMascotas{
         PropietariosXMascotas(Propietario propietario, Mascota mascota);
         Propietario getPropietario();
         Mascota getMascota();
-
+};
 #endif

@@ -1,7 +1,6 @@
 #include "PropietariosXMascostas.h"
 
-PropietariosXMascotas::PropietariosXMascotas(Propietario propietario, Mascota mascota)
-{
+PropietariosXMascotas::PropietariosXMascotas(Propietario propietario, Mascota mascota){
     this->propietario = propietario;
     this->mascota = mascota;
 }

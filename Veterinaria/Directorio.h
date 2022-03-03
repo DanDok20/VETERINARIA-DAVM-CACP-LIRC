@@ -6,10 +6,11 @@
 #include <iterator>
 #include <map>
 
+using std::map;
+
 class Directorio{
     private:
-        map<int, PropietariosXMascostas> propietariosXMascostas;
-
+        map<int, PropietariosXMascotas> PropietariosXMascotas;
     public:
         void propietariosRegistrados();
         void informacionPropietarios();
