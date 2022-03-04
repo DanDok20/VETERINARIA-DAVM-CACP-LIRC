@@ -1,0 +1,10 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/Laura/Desktop/POO-Proyecto1/2/VETERINARIA-DAVM-CACP-LIRC/Veterinaria'
+g++ -c Mascota.cpp
+g++ -c Propietario.cpp
+g++ -c PropietariosxMascotas.cpp
+g++ -c Directorio.cpp
+g++ -c Main.cpp
+g++ -o Salida Mascota.o Propietario.o PropietariosxMascotas.o Directorio.o Main.o
+make: Leaving directory `/Users/Laura/Desktop/POO-Proyecto1/2/VETERINARIA-DAVM-CACP-LIRC/Veterinaria'
+ 

@@ -23,7 +23,7 @@ Mascota::Mascota(string raza, string tipo, int edad, int peso, string tipoSangre
     this->mascotaID = mascotaID;
     this->status = status;
     if(status == false){  //false = muerto
-        cout << "Ingrese la fecha de defunsion de la mascota: ";
+        cout << "Ingrese la fecha de defuncion de la mascota: ";
         cin >> fecha;
         setEstadoDefuncion(fecha);
     }
@@ -48,4 +48,23 @@ void Mascota::cambiarEstadoDefunsion(){
 
 double Mascota::getMascotaID(){
     return this->mascotaID;
+}
+
+void Mascota::mostrarDatosMascota(){
+    cout << "El numero de identificacion de la Mascota es: " << mascotaID << "\n";
+    cout << "El nombre de la Mascota es: " << nombreMascota << "\n";
+    cout << "La raza de la Mascota es: " << raza << "\n";
+    cout << "La Mascota es: " << tipo << "\n";
+    cout << "La edad de la Mascota es: " << edad << "\n";
+    cout << "El peso de la Mascota es: " << peso << "\n";
+    cout << "El tipo de sangre de la Mascota es: " << tipoSangre << "\n";
+    cout << "El status de la mascota esta: ";
+    if(status == false){
+        cout << "muerta\n";
+        cout << "La mascota murio el: " << fechaDefuncion << "\n";
+    }
+    else{
+       cout << "viva\n"; 
+    }
+    cout << "\n";
 }

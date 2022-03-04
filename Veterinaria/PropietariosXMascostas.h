@@ -12,5 +12,6 @@ class PropietariosXMascotas{
         PropietariosXMascotas(Propietario propietario, Mascota mascota);
         Propietario getPropietario();
         Mascota getMascota();
+        void motrarDatosPropietariosXMascotas();
 };
 #endif

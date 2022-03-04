@@ -38,6 +38,7 @@ class Directorio{
         void eliminarPropietarioDMascota();
         void llenarMascota();
         void llenarPropietario();
+        void mostrarMascotaDPropietarios();
 };
 
 #endif
