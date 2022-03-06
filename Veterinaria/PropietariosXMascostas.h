@@ -8,10 +8,13 @@ class PropietariosXMascotas{
     private:
         Propietario propietario;
         Mascota mascota;
+        int idPropXMascotas;
     public:
-        PropietariosXMascotas(Propietario propietario, Mascota mascota);
+        PropietariosXMascotas();
+        PropietariosXMascotas(Propietario propietario, Mascota mascota, int idPropXMascotas);
         Propietario getPropietario();
         Mascota getMascota();
         void motrarDatosPropietariosXMascotas();
+        double getIdPropXMascotas();
 };
 #endif

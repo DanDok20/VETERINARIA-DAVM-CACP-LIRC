@@ -38,12 +38,12 @@ void Mascota::setEstadoDefuncion( string fechaDefuncion){
     this->fechaDefuncion = fechaDefuncion;
 }
 
-void Mascota::cambiarEstadoDefunsion(){
+void Mascota::cambiarEstadoDefuncion(){
     string fecha;
     status = 0;
-    cout << "Ingrese la fecha de defunsion de la mascota: ";
+    cout << "Ingrese la fecha de defuncion de la mascota: ";
     cin >> fecha;
-    setEstadoDefuncion(fecha);   
+    setEstadoDefuncion(fecha);
 }
 
 double Mascota::getMascotaID(){

@@ -15,13 +15,13 @@ class Mascota{
         int peso;
         string tipoSangre;
         string nombreMascota;
-        int mascotaID;
+        double mascotaID;
         bool status;
         string fechaDefuncion;
     public:
         Mascota();
         Mascota(string raza, string tipo, int edad, int peso, string tipoSangre, string nombreMascota, int mascotaID, bool status);
-        void cambiarEstadoDefunsion();
+        void cambiarEstadoDefuncion();
         void setEstadoDefuncion(string fechaDefuncion);
         double getMascotaID();
         void mostrarDatosMascota();

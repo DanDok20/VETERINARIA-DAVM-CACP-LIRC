@@ -10,22 +10,19 @@ void menu(Directorio directorio)
     do
     {
         cout << "======Bienvenidos al directorio de la Veterinaria Pulguitas======\n";
-        cout << "1.  Agregar informacion del propietario\n";
-        cout << "2.  Agregar informacion de la mascota\n";
-        cout << "3.  Agregar contacto de los propietarios responsables de la mascota\n";
-        cout << "4.  Eliminar contacto de los propietarios responsables de la mascota\n";
-        cout << "5.  Modificar contacto de los propietarios responsables de la mascota\n";
-        cout << "6.  Listar contacto de los propietarios responsables de la mascota\n";
-        cout << "7.  Mostrar cantidad de propietarios registrados en el directorio\n";
-        cout << "8.  Mostrar la informacion de los propietarios registrados\n";
-        cout << "9.  Mostrar informacion de las mascotas registradas\n";
-        cout << "10. Consultar propietarios responsables de mascota\n";
-        cout << "11. Consultar mascotas de propietarios\n";
-        cout << "12. Asociar nuevas mascotas a propietario\n";
-        cout << "13. Asociar nuevos propietarios a mascotas\n";
-        cout << "14. Cambiar status de mascota\n";
-        cout << "15. Eliminar propietario de una mascota\n";
-        cout << "16. Mostrar los propietarios con su respectiva mascota\n";
+        cout << "1.  Agregar un nuevo propietario al directorio\n";
+        cout << "2.  Agregar una nueva mascota al directorio\n";
+        cout << "3.  Asociar propietarios a una mascota\n";
+        cout << "4.  Asociar mascotas a un propietario\n";
+        cout << "5.  Eliminar propietarios de una mascota +\n";
+        cout << "6.  Modificar informacion de los propietarios de una mascota +\n";
+        cout << "7.  Listar informacion de los propietarios de una mascota\n";
+        cout << "8.  Listar informacion de las mascotas de un propietario\n";
+        cout << "9.  Mostrar cantidad de propietarios registrados en el directorio\n";
+        cout << "10. Listar informacion de las mascotas registradas\n";
+        cout << "11. Listar informacion de los propietarios registrados\n";
+        cout << "12. Cambiar status de vivo o muerto de una mascota\n";
+        cout << "13. Mostrar directorio\n";
         cout << "0.  Salir \n";
 
         cin >> opcion;
@@ -33,55 +30,51 @@ void menu(Directorio directorio)
         switch (opcion)
         {
         case 1:
-            directorio.llenarPropietario();
-            ;
+            directorio.agregarPropietario();
             break;
         case 2:
-            directorio.llenarMascota();
+            directorio.agregarMascota();
             break;
         case 3:
+            directorio.asociarPropietarioMascotas();
             ;
             break;
         case 4:
+            directorio.asociarMascotaPropietarios();
             ;
             break;
         case 5:
-            ;
+            directorio.eliminarPropietariosDMascota();
             break;
         case 6:
+            directorio.editarInfoPropietarioDMascota();
             ;
             break;
-        case 7:
-            directorio.propietariosRegistrados();
+        case 7: 
+            directorio.listarInfoPropietariosDMascota();
             ;
             break;
         case 8:
-            directorio.informacionPropietarios();
+            directorio.listarInfoMascotasDPropietario();
             ;
             break;
         case 9:
-            directorio.informacionMascotas();
+            directorio.cantidadPropietariosRegistrados();
             ;
             break;
         case 10:
+            directorio.informacionMascotasRegistradas();
             ;
             break;
         case 11:
+            directorio.informacionPropietariosRegistrados();
             ;
             break;
         case 12:
-            directorio.propietariosMascota();
-            directorio.mostrarMascotaDPropietarios();
-            ;
+            directorio.cambiarStatusMascota();
             break;
         case 13:
-            ;
-            break;
-        case 14:
-            ;
-            break;
-        case 15:
-            break;
+            directorio.mostrarDirectorio();
         default:
             break;
         }

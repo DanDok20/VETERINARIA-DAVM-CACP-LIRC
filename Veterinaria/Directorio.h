@@ -14,31 +14,37 @@ using std::cout;
 using std::string;
 
 
-
-
 class Directorio{
     private:
+        int contId;
         unordered_map<double, Propietario>::iterator i;
         unordered_map<double, Propietario> mapPropietario;
         unordered_map<double, Mascota>::iterator j;
         unordered_map<double, Mascota> mapMascota;
         vector<PropietariosXMascotas> propietariosXMascotas;
     public:
+        Directorio();
+        int getContId();
+
         void inicializarDatos();
-        void propietariosRegistrados();
-        void informacionPropietarios();
-        void informacionMascotas();
-        void propietariosMascota();
-        void mascotasPropietario();
-        void agregarMascotaAPropietario();
-        void agregarPropietarioAMascota();
-        void editarPropietariosDMascota();
+        void cantidadPropietariosRegistrados();
+        void informacionPropietariosRegistrados();
+        void informacionMascotasRegistradas();
+        void asociarPropietarioMascotas();
+        void asociarMascotaPropietarios();
+        void agregarMascota();
+        void agregarPropietario();
+        void mostrarDirectorio();
+        void cambiarStatusMascota();
+        void editarInfoPropietarioDMascota();
+        void listarInfoPropietariosDMascota();
+        void listarInfoMascotasDPropietario();
         void eliminarPropietariosDMascota();
-        void listarPropietariosDMascota();
-        void eliminarPropietarioDMascota();
-        void llenarMascota();
-        void llenarPropietario();
-        void mostrarMascotaDPropietarios();
+
+        void parametroEliminarPropietariosDMascota(double idVector);
+        void parametroAsociar(Propietario propietario, Mascota mascota);
+
+        //void editarInfoPropietariosDMascota2();
 };
 
 #endif
