@@ -9,7 +9,7 @@ using std::string;
 
 class Mascota{
     private:
-        string raza;
+        string raza;            //Se definen los atributos para la clase Mascota
         string tipo;
         int edad;
         int peso;
@@ -19,7 +19,7 @@ class Mascota{
         bool status;
         string fechaDefuncion;
     public:
-        Mascota();
+        Mascota();          //Se definen los constructores y funciones a utilizar en Mascota
         Mascota(string raza, string tipo, int edad, int peso, string tipoSangre, string nombreMascota, int mascotaID, bool status);
         void cambiarEstadoDefuncion();
         void setEstadoDefuncion(string fechaDefuncion);

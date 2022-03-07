@@ -4,9 +4,9 @@ using std::cin;
 using std::cout;
 using std::string;
 
-void menu(Directorio directorio)
-{
-    int opcion = 0;
+void menu(Directorio directorio)                    //Muestra en pantalla las opciones que el usuario puede seleccionar
+{                                                   //en el directorio Pulguitas
+    int opcion = 0; 
     do
     {
         cout << "======Bienvenidos al directorio de la Veterinaria Pulguitas======\n";
@@ -14,8 +14,8 @@ void menu(Directorio directorio)
         cout << "2.  Agregar una nueva mascota al directorio\n";
         cout << "3.  Asociar propietarios a una mascota\n";
         cout << "4.  Asociar mascotas a un propietario\n";
-        cout << "5.  Eliminar propietarios de una mascota +\n";
-        cout << "6.  Modificar informacion de los propietarios de una mascota +\n";
+        cout << "5.  Eliminar propietarios de una mascota\n";
+        cout << "6.  Modificar informacion de los propietarios de una mascota\n";
         cout << "7.  Listar informacion de los propietarios de una mascota\n";
         cout << "8.  Listar informacion de las mascotas de un propietario\n";
         cout << "9.  Mostrar cantidad de propietarios registrados en el directorio\n";
@@ -27,8 +27,8 @@ void menu(Directorio directorio)
 
         cin >> opcion;
 
-        switch (opcion)
-        {
+        switch (opcion)                                     //Permite ingresar a cada funcion segun la opcion elegida
+        {                                                   //por el usuario
         case 1:
             directorio.agregarPropietario();
             break;
@@ -36,11 +36,11 @@ void menu(Directorio directorio)
             directorio.agregarMascota();
             break;
         case 3:
-            directorio.asociarPropietarioMascotas();
+            directorio.asociarMascotaPropietarios();
             ;
             break;
         case 4:
-            directorio.asociarMascotaPropietarios();
+            directorio.asociarPropietarioMascotas();
             ;
             break;
         case 5:
@@ -83,8 +83,7 @@ void menu(Directorio directorio)
 
 int main()
 {
-    Directorio directorio;
-    directorio.inicializarDatos();
-    menu(directorio);
+    Directorio directorio;                                      //Crea una clase de tipo directorio para enviarlo al menu e ingresar
+    menu(directorio);                                           //a las funciones de Directorio
     return 0;
 }

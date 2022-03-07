@@ -1,36 +1,27 @@
 #include "Directorio.h"
 
-Directorio::Directorio(){
-    contId = 1;
+Directorio::Directorio(){                        //Es constructor por defecto para inicializar el contador del directorio para ingresarlo
+    contId = 1;                                  //al vector PropietariosXMascotas
 }
 
-int Directorio::getContId(){
+int Directorio::getContId(){                     //Retorna el contador del directorio
     return this -> contId;
 }
 
-void Directorio::inicializarDatos(){
-    mapPropietario[101] = Propietario("Juan","juan@correo.com",101, 321101);
-    mapPropietario[102] = Propietario("Pedro","pedro@correo.com",102, 321102);
-    mapPropietario[103] = Propietario("Sofia","sofia@correo.com",103, 321103);
-    mapMascota[501] = Mascota("Terr", "Perro", 5, 14, "A", "fifi", 501, 1);
-    mapMascota[502] = Mascota("Pit", "Perro", 7, 20, "AB", "max", 502, 1);
-    mapMascota[503] = Mascota("Mont", "Gato", 3, 10, "O", "fifi", 503, 1);
-}
-
-void Directorio::agregarMascota(){
+void Directorio::agregarMascota(){              //Permite al usuario agregar una mascota con los respectivos datos de la mascota 
     string raza, tipo, tipoSangre, nombreMascota, fechaDefuncion;
     int edad, peso;
     double mascotaID;
     bool status;
     cout << "Indique la identificacion de la mascota: ";
     cin >> mascotaID;
-    for(j = mapMascota.begin(); j != mapMascota.end(); ++j){
-        if(mascotaID == j->first){
-            cout << "Esta mascota ya se encuentra registrada\n";
+    for(j = mapMascota.begin(); j != mapMascota.end(); ++j){    //Recorre el mapa de Mascotas para verificar que la mascota no exista
+        if(mascotaID == j->first){                              //Si encuentra el ID de la mascota a registrar, devuelve un mensaje de error y termina la funcion
+            cout << "Esta mascota ya se encuentra registrada en el directorio de la Veterinaria Pulguitas\n";
             return;
         }
     }
-    cout << "Indique la nombre de la mascota: ";
+    cout << "Indique la nombre de la mascota: ";                //Se llenan las variables con los datos necesarios para registrar la mascota
     cin >> nombreMascota;
     cout << "Indique la raza: ";
     cin >> raza;
@@ -38,23 +29,23 @@ void Directorio::agregarMascota(){
     cin >> tipo;
     cout << "Indique la tipo de sangre: ";
     cin >> tipoSangre;
-    cout << "Indique la edad: ";
+    cout << "Indique la edad (anios): ";
     cin >> edad;
-    cout << "Indique la peso: ";
+    cout << "Indique la peso (Kg): ";
     cin >> peso;
     cout << "Indique si la mascota esta viva (1) o muerta (0): ";
     cin >> status;
-    Mascota petTemp(raza, tipo, edad, peso, tipoSangre, nombreMascota, mascotaID, status);
-    mapMascota[mascotaID] = petTemp;
+    Mascota petTemp(raza, tipo, edad, peso, tipoSangre, nombreMascota, mascotaID, status);  //Se crea una mascota nueva temporal de tipo Mascota
+    mapMascota[mascotaID] = petTemp;                                                        //para ser agregada al mapa(desordenado) mascota, y la clave del mapa Mascota es el mismo ID de la mascota
 }
 
-void Directorio::agregarPropietario(){
+void Directorio::agregarPropietario(){                              //Permite al usuario agregar un nuevo propietario con los respectivos datos
     string nombrePropietario, email;
     double propietarioID, telefono;
     cout << "Indique el ID del propietario: ";
     cin >> propietarioID;
-    for(i = mapPropietario.begin(); i != mapPropietario.end(); ++i){
-        if(propietarioID == i->first){
+    for(i = mapPropietario.begin(); i != mapPropietario.end(); ++i){    //Recorre el mapa(desordenado) de propietarios para verificar que no se encuentre registrado
+        if(propietarioID == i->first){                                  //el nuevo propietario
             cout << "El propietario ya existe en el directorio de la Veterinaria Pulguitas\n";
             return;
         }
@@ -65,38 +56,38 @@ void Directorio::agregarPropietario(){
     cin >> email;
     cout << "Indique el telefono del propietario: ";
     cin >> telefono;
-    Propietario propieTemp(nombrePropietario, email, propietarioID, telefono);
+    Propietario propieTemp(nombrePropietario, email, propietarioID, telefono);      //Se cre un propietario temporal para ser agregado al mapa propietario
     mapPropietario[propietarioID] = propieTemp;
 }
 
-void Directorio::cantidadPropietariosRegistrados(){
-    int cantidad = 0;
+void Directorio::cantidadPropietariosRegistrados(){                     //Es una funcion con un contador la cual recorre el mapa propietarios
+    int cantidad = 0;                                                   //indicando la cantidad de propietarios registrados
     for(i = mapPropietario.begin(); i != mapPropietario.end(); ++i){
         cantidad++;
     }
     cout << "El directorio tiene " << cantidad << " propietarios registrados\n";
 }
 
-void Directorio::informacionPropietariosRegistrados(){
-    for(i = mapPropietario.begin(); i != mapPropietario.end(); ++i){
-        i->second.mostrarDatosPropietario();
+void Directorio::informacionPropietariosRegistrados(){                  //Funcion que recorre el mapa propietarios y muestra la informacion de cada propietario presente en el mapa
+    for(i = mapPropietario.begin(); i != mapPropietario.end(); ++i){    //Recorre el mapa desde el inicio hasta que no encuentre mas elementos
+        i->second.mostrarDatosPropietario();                            //Se para en la informacion presente de cada posicion del mapa y llama a la funcion que imprime los datos
     }   
 }
 
-void Directorio::informacionMascotasRegistradas(){
-    for(j = mapMascota.begin(); j != mapMascota.end(); ++j){
-        j->second.mostrarDatosMascota();
+void Directorio::informacionMascotasRegistradas(){                      //Funcion que recorre el mapa mascotas y muestra la informacion de cada mascota presente en el mapa
+    for(j = mapMascota.begin(); j != mapMascota.end(); ++j){            //Recorre el mapa desde el inicio hasta que no encuentre mas elementos
+        j->second.mostrarDatosMascota();                                //Se para en la informacion presente de cada posicion del mapa y llama a la funcion que imprime los datos
     }
 }
 
-void Directorio::asociarPropietarioMascotas(){
-    double idPet = 0, idProp = 0;
+void Directorio::asociarPropietarioMascotas(){                          //Funcion que permite hacer una relacion de asignacion entre propietario y mascotas
+    double idPet = 0, idProp = 0;                                       //y las envia al vector propietariosXMascotas
     int cantidadMascotas = 0;
     cout << "Ingrese el numero de identificacion del propietario: ";
     cin >> idProp;
     cout << "Ingrese la cantidad de mascotas que desea asociar con este propietario: ";
     cin >> cantidadMascotas;
-    for( int i = 0; i < cantidadMascotas; i++ ){
+    for( int i = 0; i < cantidadMascotas; i++ ){                        
         cout << "Ingrese el numero de identificacion de la mascota la cual desea asociar: ";
         cin >> idPet;
         PropietariosXMascotas objet1(mapPropietario[idProp], mapMascota[idPet], contId++);
@@ -104,8 +95,8 @@ void Directorio::asociarPropietarioMascotas(){
     }
 }
 
-void Directorio::asociarMascotaPropietarios(){
-    double idPet = 0, idProp = 0;
+void Directorio::asociarMascotaPropietarios(){                          //Funcion que permite hacer una relacion de asignacion entre mascota y propietarios
+    double idPet = 0, idProp = 0;                                       //y las envia al vector propietariosXMascotas
     int cantidadPropietarios = 0;
     cout << "Ingrese el numero de identificacion de la mascota: ";
     cin >> idPet;
@@ -119,106 +110,60 @@ void Directorio::asociarMascotaPropietarios(){
     }  
 }
 
-void Directorio::mostrarDirectorio(){
-    for(int i = 0; i < propietariosXMascotas.size(); i++){
-        propietariosXMascotas[i].motrarDatosPropietariosXMascotas();
+void Directorio::mostrarDirectorio(){                                   //Funcion que recorre el vector de propietariosXMascotas y muestra
+    for(int i = 0; i < propietariosXMascotas.size(); i++){              //en pantalla los datos de los propietarios y las mascotas utilizando
+        propietariosXMascotas[i].motrarDatosPropietariosXMascotas();    //la funcion mostrarDatosPropietariosXMascotas
     }
 }
 
-void Directorio::editarInfoPropietarioDMascota(){
-    double idPropietario = 0, idPet = 0;
-    int opcion = 0;
-    cout << "Ingrese el numero de identificacion de la mascota: ";
-    cin >> idPet;
-    for(int l = 0; l < propietariosXMascotas.size(); l++){
-        if(propietariosXMascotas[l].getMascota().getMascotaID() == idPet){
-            propietariosXMascotas[l].motrarDatosPropietariosXMascotas();
-        }
-    }
+void Directorio::editarInfoPropietarioDMascota(){                       //Funcion que permite al usuario editar la informacion de un propietario en especifico
+    double idPropietario = 0;                                           
+    listarInfoPropietariosDMascota();
     cout << "Ingrese el numero de identificacion del propietario que desea editar: ";
     cin >> idPropietario;
-    mapPropietario[idPropietario].editarPropietario();
-    for(int l = 0; l < propietariosXMascotas.size(); l++){
-        if(propietariosXMascotas[l].getPropietario().getPropietarioID() == idPropietario && propietariosXMascotas[l].getMascota().getMascotaID() == idPet){
-            parametroEliminarPropietariosDMascota(propietariosXMascotas[l].getIdPropXMascotas());
-            parametroAsociar(mapPropietario[idPropietario], mapMascota[idPet]);
-        }
-    }
+    mapPropietario[idPropietario].editarPropietario();                  //Ingresa al mapa propietario con el ID del propietario y edita la informacion para despues guardarla en el mapa
 }
 
-
-/*void Directorio::editarInfoPropietariosDMascota2(){
-    double idPet = 0, idPropietario = 0;
-    cout << "Ingrese el numero de identificacion de la mascota: ";
-    cin >> idPet;
-    for(int l = 0; l < propietariosXMascotas.size(); l++){
-        if(propietariosXMascotas[l].getMascota().getMascotaID() == idPet){
-            propietariosXMascotas[l].motrarDatosPropietariosXMascotas();
-        }
-    }
-    cout << "Ingrese el ID del propietario que desea editar: ";
-    cin >> idPropietario;
-    mapPropietario[idPropietario].editarPropietario();
-    for( int l = 0; l < propietariosXMascotas.size(); l++ ){
-        if( propietariosXMascotas[l].getPropietario().getPropietarioID() == idPropietario ){
-            propietariosXMascotas[l].getPropietario().editarPropietarioVector(mapPropietario[idPropietario]);
-        }
-    }
-}*/
-
-void Directorio::parametroEliminarPropietariosDMascota(double idVector){
-    for( int l = 0; l < propietariosXMascotas.size(); l++ ){
-        if(propietariosXMascotas[l].getIdPropXMascotas() == idVector){
-            propietariosXMascotas.erase(propietariosXMascotas.begin() + l);
-        }
-    }
-}
-
-void Directorio::parametroAsociar(Propietario propietario, Mascota mascota){
-    PropietariosXMascotas objet1(propietario, mascota, contId++);
-    propietariosXMascotas.push_back(objet1);
-}
-
-void Directorio::eliminarPropietariosDMascota(){
-    double idVector = 0;
+void Directorio::eliminarPropietariosDMascota(){                        //Funcion que permite eliminar del vector propietariosXMascotas la asociacion entre un propietario
+    double idVector = 0;                                                //y una mascota
     listarInfoPropietariosDMascota();
     cout << "Ingrese el id la asociacion que desea eliminar: ";
     cin >> idVector;
-    for( int l = 0; l < propietariosXMascotas.size(); l++ ){
-        if(propietariosXMascotas[l].getIdPropXMascotas() == idVector){
-            propietariosXMascotas.erase(propietariosXMascotas.begin() + l);
+    for( int l = 0; l < propietariosXMascotas.size(); l++ ){            //Recorre el vector propietariosXMascotas evaluando en cada posicion
+        if(propietariosXMascotas[l].getIdPropXMascotas() == idVector){  //que el ID, que marca las relaciones, ingresado por el usario coincida con el ID
+            propietariosXMascotas.erase(propietariosXMascotas.begin() + l); //que sirve como clave en el vector y ,a traves de la funcion erase, elimina esa posicion 
         }
     }
 }
 
-void Directorio::listarInfoPropietariosDMascota(){
-    double idPet = 0;
+void Directorio::listarInfoPropietariosDMascota(){                  //Funcion que muestra en pantalla la informacion de los propietarios
+    double idPet = 0;                                               //asociados a una mascota determinada
     int opcion = 0;
     cout << "Ingrese el numero de identificacion de la mascota: ";
     cin >> idPet;
     
-    for(int l = 0; l < propietariosXMascotas.size(); l++){
-        if(propietariosXMascotas[l].getMascota().getMascotaID() == idPet){
+    for(int l = 0; l < propietariosXMascotas.size(); l++){          //Recorre el vector de las asociones evaluando el ID de la mascota para mostrar
+        if(propietariosXMascotas[l].getMascota().getMascotaID() == idPet){  //la informacion de los propietarios asociados
             propietariosXMascotas[l].motrarDatosPropietariosXMascotas();
         }
     }
 }
 
-void Directorio::listarInfoMascotasDPropietario(){
-    double idProp = 0;
+void Directorio::listarInfoMascotasDPropietario(){                  //Funcion que muestra en pantalla la informacion de las mascotas
+    double idProp = 0;                                              //asociadas a un propietario determinado
     int opcion = 0;
     cout << "Ingrese el numero de identificacion del propietario: ";
     cin >> idProp;
     
-    for(int l = 0; l < propietariosXMascotas.size(); l++){
-        if(propietariosXMascotas[l].getPropietario().getPropietarioID() == idProp){
+    for(int l = 0; l < propietariosXMascotas.size(); l++){          //Recorre el vector de las asociones evaluando el ID del propietario para mostrar
+        if(propietariosXMascotas[l].getPropietario().getPropietarioID() == idProp){     //la informacion de los propietarios asociados
             propietariosXMascotas[l].motrarDatosPropietariosXMascotas();
         }
     }
 }
 
-void Directorio::cambiarStatusMascota(){
-    int idPet = 0;
+void Directorio::cambiarStatusMascota(){                            //Funcion que permite modificar el estado de una mascota
+    int idPet = 0;                                                  //utilizando como clave el ID de la mascota a encontrar
     cout << "Ingrese el numero de identificacion de la mascota: ";
     cin >> idPet;
     mapMascota[idPet].cambiarEstadoDefuncion();

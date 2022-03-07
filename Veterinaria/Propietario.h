@@ -8,25 +8,22 @@ using std::cin;
 using std::cout;
 
 
+
 class Propietario{
     private:
-        string nombrePropietario;
+        string nombrePropietario;       //Se definen los atributos de la clase propietario
         string email;
         double propietarioID;
         double telefono;
     public:
-        Propietario();
+        Propietario();                  //Se definen las funciones y constructores que van a ser utilizas dentro de propietario
         Propietario(string nombrePropietario, string email, double propietarioID, double telefono);
         double getPropietarioID();
+        string getNombrePropietario();
         void mostrarDatosPropietario();
         void editarPropietario();
-        void editarPropietarioVector(Propietario propietario);
         void setNombrePropietario(string nombrePropietario);
         void setEmail(string email);
-        void setPropietarioID(double propietarioID);
         void setTelefono(double telefono);
-        //string getNombrePropietario();
-        //string getEmailPropietario();
-        //double getTelefono();
 };
 #endif

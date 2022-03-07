@@ -17,16 +17,14 @@ using std::string;
 class Directorio{
     private:
         int contId;
-        unordered_map<double, Propietario>::iterator i;
-        unordered_map<double, Propietario> mapPropietario;
-        unordered_map<double, Mascota>::iterator j;
-        unordered_map<double, Mascota> mapMascota;
-        vector<PropietariosXMascotas> propietariosXMascotas;
+        unordered_map<double, Propietario>::iterator i;  //Se definio el iterador que permite recorrer el mapa de propietarios
+        unordered_map<double, Propietario> mapPropietario;      //Se inicializo el mapa de propietarios
+        unordered_map<double, Mascota>::iterator j;     //Se definio el iterador que permite recorrer el mapa de mascotas
+        unordered_map<double, Mascota> mapMascota;      //Se inicializo el mapa de mascotas
+        vector<PropietariosXMascotas> propietariosXMascotas;    //Se inicializo el vector que contiene las asociaciones entre propietarios y mascotas
     public:
-        Directorio();
+        Directorio();                                   //Se definieron las funciones y constructores que van a ser utilizadas desde el directorio
         int getContId();
-
-        void inicializarDatos();
         void cantidadPropietariosRegistrados();
         void informacionPropietariosRegistrados();
         void informacionMascotasRegistradas();
@@ -40,11 +38,6 @@ class Directorio{
         void listarInfoPropietariosDMascota();
         void listarInfoMascotasDPropietario();
         void eliminarPropietariosDMascota();
-
-        void parametroEliminarPropietariosDMascota(double idVector);
-        void parametroAsociar(Propietario propietario, Mascota mascota);
-
-        //void editarInfoPropietariosDMascota2();
 };
 
 #endif
