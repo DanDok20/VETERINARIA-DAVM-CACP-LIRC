@@ -1,28 +1,25 @@
 # Integrantes
 
-- Daniel Andres Vasquez Murillo  
+- Daniel Andres Vasquez Murillo
 - Laura Isabela Rojas Cardenas  
 - Carlos Andres Camacho Peña  
 
 # introduccion
 
-Un software de directorio telefónico para una compañía veterinaria.  
+Un software de directorio telefónico para una compañía veterinaria, el cual almacena información sobre los propietarios y mascotas. Los propietarios pueden tener varias mascotas, y las mascotas pueden tener varios propietarios.
 
 ## Caracteristicas
 
-1. El sistema almacenar el nombre completo, email, documento de identidad y teléfono de cada propietario responsable.  
-2. El sistema debe almacenar la información de cada mascota. Esta información consiste en la raza, el tipo: perro | gato | otro, el peso, la edad, tipo de sangre, el nombre, la identificación, status: viva muerta. Si la mascota ha fallecido también registra la fecha de defunción.  
-3. Una persona puede tener varias mascotas y cada mascota puede tener varios propietarios responsables. 
-4. El sistema debe permitir agregar/modificar/eliminar y listar el contacto de los propietarios responsables. El número de identificación es el campo que el sistema utiliza para buscar a las personas antes de modificar o eliminar.  
-5. El sistema debe mostrar cuántos propietarios tiene registrados el directorio.  
-6. El sistema debe mostrar la información de los propietarios registrados el directorio.  
-7. El sistema debe mostrar la información de las mascotas registradas el directo.  
-8. El sistema debe permitir consultar para una mascota dada cuáles son sus propietarios responsables.  
-9. El sistema debe permitir consultar para un propietario dado cuales son las mascotas relacionadas.  
-10. El sistema debe permitir asociar nuevas mascotas a un propietario.  
-11. El sistema debe permitir asociar nuevos propietarios a una mascota.  
-12. El sistema debe permitir cambiar el status de una mascota: de viva a muerta.  
-13. El sistema debe permitir eliminar un propietario de una mascota.  
+1. El sistema almacena el nombre, email, número de identificación y teléfono de cada propietario.  
+2. El sistema almacena la información de cada mascota. Esta información consiste en: raza, tipo, peso, edad, tipo de sangre, nombre, número de identificación, status (registra la fecha de defunción en caso de que la mascota halla fallecido).
+3. Un propietario puede tener varias mascotas y cada mascota puede tener varios propietarios. 
+4. El sistema permite agregar, modificar, eliminar y listar la información de los propietarios de una mascota específica.
+5. El sistema muestra cuántos propietarios se encuentran registrados en el directorio.  
+6. El software muestra la información de los propietarios registrados en el directorio.  
+7. El software muestra la información de las mascotas registradas en el directo.  
+8. El sistema permite consultar para un propietario dado cuáles son las mascotas relacionadas.  
+9. El sistema permite asociar nuevas mascotas a un propietario y viceversa.  
+10. El sistema permite cambiar el status de una mascota de viva a muerta.  
 
 ## Link UML
 
